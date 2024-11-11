@@ -61,9 +61,27 @@ body {
 }
 
 .right-panel h3 {
-    color: #007f00;
-    margin-bottom: 20px;
+    color:  rgba(128, 0, 0, 0.966);
+    margin-bottom: 40px;
     font-weight: normal;
+    font-size: 30px;
+
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    align-self: center;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    
+}
+.back-link {
+    background-color:rgba(128, 0, 0, 0.966);
 }
 
 .login-box {
@@ -127,7 +145,7 @@ body {
     display: block;
     margin-top: 15px;
     font-size: 14px;
-    color: #007f00;
+    color:black;
     text-decoration: none;
 }
 
@@ -135,8 +153,8 @@ body {
     text-decoration: underline;
 }
 .new-applicant-btn {
-    background-color: #006c00;
-    color: #fff;
+    background-color:white;
+    color:black;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
