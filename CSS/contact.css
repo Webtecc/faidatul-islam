@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.contact-item h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Color and Hover Effects */
+.address {
+    background-color: #3498db;
+}
+
+.address:hover {
+    background-color: #2980b9;
+}
+
+.phone {
+    background-color: #e67e22;
+}
+
+.phone:hover {
+    background-color: #d35400;
+}
+
+.hours {
+    background-color: #2ecc71;
+}
+
+.hours:hover {
+    background-color: #27ae60;
+}
+
+.email {
+    background-color: #9b59b6;
+}
+
+.email:hover {
+    background-color: #8e44ad;
+}
+
+.about {
+    background-color: #e74c3c;
+}
+
+.about:hover {
+    background-color: #c0392b;
+}

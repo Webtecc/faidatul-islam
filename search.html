@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background-color: whitesmoke;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 800px;
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .instructions {
+            background-color: #ffe6e6;
+            color: #b00;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .result-section {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: left;
+            display: none;
+        }
+
+        .result-section .result-title {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .result-section .result-text {
+            background-color: #e6f7ff;
+            color: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .status-text {
+            color: red;
+            font-weight: bold;
+        }
+
+        .submit-btn, .check-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-btn {
+            font-size: 14px;
+        }
+
+        .submit-btn:hover, .check-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Check For Security Personnel</h2>
+        
+        <div class="form-group">
+            <label for="nameInput">Name</label>
+            <input type="text" id="nameInput" placeholder="Enter your Name" required>
+        </div>
+        <button class="submit-btn" onclick="fetchDetails()">Fetch Details</button>        
+    
+        <div class="instructions">
+            <p>Type in any Security personnel's Registration Name to search for their information. Note: Only personnel whose names are in our database are recognized as Hunter's Security Personnel.</p>
+        </div>
+    
+        <div class="result-section">
+            <p class="result-title">Search details</p>
+            <div class="result-text">
+                <p><strong>Student Name:</strong> <span id="name"></span></p>
+                <p><strong>LGA:</strong> <span id="lga"></span></p>
+                <p><strong>Home Town:</strong> <span id="home-town"></span></p>
+                <p><strong>Address:</strong> <span id="address"></span></p>
+                <p><strong>State:</strong> <span id="state"></span></p>
+                <p class="status-text">Status: <span id="result-status"></span></p>
+            </div>
+            <button class="check-btn" onclick="checkAnother()">Check Another Personnel</button>
+        </div>
+    
+        <script>
+       function fetchDetails() {
+    const name = document.getElementById('nameInput').value;
+
+    if (!name) {
+        alert("Please enter a registration name.");
+        return;
+    }
+
+    fetch(`PHP/fetch.php?name=${name}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+            } else {
+                document.getElementById('name').innerText = data.name;
+                document.getElementById('lga').innerText = data.lga;
+                document.getElementById('home-town').innerText = data.homeTown;
+                document.getElementById('address').innerText = data.address;
+                document.getElementById('state').innerText = data.state;
+                document.getElementById('result-status').innerText = data.status;
+
+                document.querySelector('.result-section').style.display = 'block';
+            }
+        })
+        .catch(error => console.error('Error fetching details:', error));
+}
+     function checkAnother() {
+                document.getElementById('name').value = '';
+                document.querySelector('.result-section').style.display = 'none';
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="CSS/application.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Left Section with Instructions -->
+    <div class="left-section">
+        <h2>Follow The Steps Below For The Registration</h2>
+
+        <ul>
+            <li>Fill in the required fields with correct data and click SUBMIT.</li>
+            <li>Be careful while entering your phone number and email address as they will be used for sending your APPLICATION FORM.</li>
+            <li>Ensure that the phone number and email provided are unique as they will be used for sending any other relevant information.</li>
+            <li>Before submitting you agree that the information provided is real and correct!</li>
+            <li>After filling the form correctly, click on the SUBMIT button below.</li>
+        </ul>
+        <a href="https://forms.gle/CRfKCs1xNvTq5sDv8" class="back-linker">Register Here</a>
+
+    </div>
+
+    <!-- Right Section with Form -->
+    <div class="right-section">
+        <a href="index.html" class="back-link">&larr; BACK TO HOMEPAGE</a>
+        <h2>Registration Portal</h2>
+        <p>Fill the form Below</p>
+
+        <form action="PHP/insert.php" method="post" id="applicationForm" class="application-form" onsubmit="openModal(document.getElementById('name').value)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="parent_name">Parent/Guardian's Name</label>
+                <input type="text" id="parent_name" name="parent_guardian_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="parent_contact">Parent/Guardian's Contact</label>
+                <input type="tel" id="parent_contact" name="parent_guardian_contact" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" class="form-control" required>
+                    <option value="" disabled selected>Choose your Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" class="form-control" value="Niger State">
+            </div>
+            <div class="form-group">
+                <label for="lga">LGA</label>
+                <select id="lga" name="lga" class="form-control" required>
+                    <option value="" disabled selected>Select your LGA</option>
+                    <option value="agaie">Agaie</option>
+                    <option value="agwara">Agwara</option>
+                    <option value="bida">Bida</option>
+                    <option value="borgu">Borgu</option>
+                    <option value="bosso">Bosso</option>
+                    <option value="chanchaga">Chanchaga</option>
+                    <option value="edati">Edati</option>
+                    <option value="gbako">Gbako</option>
+                    <option value="gurara">Gurara</option>
+                    <option value="katcha">Katcha</option>
+                    <option value="kontagora">Kontagora</option>
+                    <option value="lapai">Lapai</option>
+                    <option value="lavun">Lavun</option>
+                    <option value="magama">Magama</option>
+                    <option value="mariga">Mariga</option>
+                    <option value="mashegu">Mashegu</option>
+                    <option value="mokwa">Mokwa</option>
+                    <option value="munya">Munya</option>
+                    <option value="paikoro">Paikoro</option>
+                    <option value="rafi">Rafi</option>
+                    <option value="rijau">Rijau</option>
+                    <option value="shiroro">Shiroro</option>
+                    <option value="suleja">Suleja</option>
+                    <option value="tafa">Tafa</option>
+                    <option value="wushishi">Wushishi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="home_town">Home Town</label>
+                <input type="text" id="home_town" name="home_town" class="form-control">
+            </div>
+
+            <!-- Modal Structure -->
+            <div id="successModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <h3>Applicant Registration</h3>
+                    <p id="welcomeMessage"></p>
+                    <p>Please check your email/sms for further details.</p>
+                    <button class="close-btn" onclick="closeModal()">Close</button>
+                    <button class="continue-btn" onclick="goToDashboard()">Continue to Login Page</button>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+          Already Have an Account<a href="login.html" class="front-linker">Login Here</a>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Function to open the modal
+    function openModal(name) {
+        document.getElementById("welcomeMessage").textContent = `Congratulations ${name}, your applicant registration was successful.`;
+        document.getElementById("successModal").style.display = "block";
+    }
+
+    // Function to close the modal and reload the page
+    function closeModal() {
+        document.getElementById("successModal").style.display = "none";
+        location.reload(); // Reload the page to start a new registration
+    }
+
+    // Redirect to dashboard
+    function goToDashboard() {
+        window.location.href = "login.html";
+    }
+
+    // Handle form submission with fetch
+    document.getElementById("applicationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent actual form submission
+
+        // Collect form data
+        const formData = new FormData(this);
+
+        // Send data using fetch
+        fetch("PHP/insert.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json()) // Assuming insert.php returns JSON indicating success or failure
+        .then(data => {
+            if (data.success) {
+                openModal(document.getElementById("name").value);
+                this.reset(); // Optionally clear the form
+            } else {
+                alert("There was an error processing your submission. Please try again.");
+            }
+        })
+            });
+</script>
+</body>
+</html>

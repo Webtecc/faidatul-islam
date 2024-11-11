@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Profile</title>
+    <link rel="stylesheet" href="CSS/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>IBBUJMB</h2>
+            </div>
+            <ul class="nav">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#" class="active">Profile</a></li>
+                <li><a href="#">Wallet</a></li>
+                <li><a href="#">Payments</a></li>
+                <li><a href="#">O Level</a></li>
+                <li><a href="#">Final Submission</a></li>
+                <li><a href="#">Admission Status</a></li>
+                <li><a href="#">Check Result</a></li>
+                <li><a href="#">Contact Support</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Tour</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Profile</h1>
+                <div class="user-info">
+                    <span>Hi, zee umar</span>
+                </div>
+            </header>
+
+            <section class="profile-content">
+                <!-- Profile Picture and Basic Info -->
+                <div class="profile-header">
+                    <div class="profile-picture">
+                        <img src="Images/Female Graduants.jpg" alt="Profile Picture">
+                        <span>Click on the Camera icon to upload your passport</span>
+                    </div>
+                    <div class="basic-info">
+                        <p><strong>Application Number:</strong> IBBUJMB2024/0253</p>
+                        <p><strong>Admitted Level:</strong> 100</p>
+                        <p><strong>Applied Department:</strong> SCIENCE</p>
+                        <p><strong>Applied Programme:</strong> Biology, Chemistry, Geography</p>
+                        <p><strong>Gender:</strong> Female</p>
+                        <p><strong>State / LGA:</strong> Niger / Chanchaga</p>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <form class="registration-form">
+                    <h2>Personal Info</h2>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" value="zee">
+                    </div>
+                    <div class="form-group">
+                        <label>Middle Name</label>
+                        <input type="text" value="zee">
+                    </div>
+                    <div class="form-group">
+                        <label>Surname</label>
+                        <input type="text" value="umar">
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date">
+                    </div>
+
+                    <h2>Nationality</h2>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <select>
+                            <option>Nigeria</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <select>
+                            <option>Niger</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>LGA</label>
+                        <select>
+                            <option>Chanchaga</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <h2>Other Info</h2>
+                    <div class="form-group">
+                        <label>Working Class</label>
+                        <input type="radio" name="working" value="None"> None
+                        <input type="radio" name="working" value="Public"> Public
+                        <input type="radio" name="working" value="Private"> Private
+                        <input type="radio" name="working" value="NGO"> NGO
+                    </div>
+                    <div class="form-group">
+                        <label>Years of Experience</label>
+                        <input type="text">
+                    </div>
+
+                    <button type="button" onclick="window.print()">Print Bio Data</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="CSS/gallary.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-link">&larr; BACK TO HOMEPAGE</a>
+        <h1>The School Gallary</Head></h1>
+        </div>
+    <div class="gallery">
+        <!-- Repeat the following block for each image -->
+        <div class="gallery-item">
+            <img src="Images/Female Graduants.jpg" alt="Description 1" class="gallery-img" onclick="openModal(this)">
+            <div class="caption">2020 Female Graduants</div>
+        </div>
+        <div class="gallery-item">
+            <img src="Images/H1.JPG" alt="Description 2" class="gallery-img" onclick="openModal(this)">
+            <div class="caption">Group of Student with Chairman</div>
+        </div>
+        <div class="gallery-item">
+            <img src="Images/H2.JPG" alt="Description 3" class="gallery-img" onclick="openModal(this)">
+            <div class="caption">2023 Female Graduants</div>
+        </div>
+        <!-- Add more images similarly -->
+        <div class="gallery-item">
+            <img src="Images/teachers.JPG" alt="Description 10" class="gallery-img" onclick="openModal(this)">
+            <div class="caption">Group of Male Teachers</div>
+        </div>
+        
+    <div class="gallery-item">
+    <img src="Images/parade.JPG" alt="Description 10" class="gallery-img" onclick="openModal(this)">
+    <div class="caption">Parade Students</div>
+</div>
+<div class="gallery-item">
+            <img src="Images/paradee.JPG" alt="Description 10" class="gallery-img" onclick="openModal(this)">
+            <div class="caption">School Head with Parade Students</div>
+        </div>
+        <div class="gallery-item">
+        <img src="Images/Married Women Students.jpg" alt="Description 10" class="gallery-img" onclick="openModal(this)">
+        <div class="caption">Married Women Students</div>
+    </div>
+    <div class="gallery-item">
+    <img src="Images/Female Teachers.jpg" alt="Description 10" class="gallery-img" onclick="openModal(this)">
+    <div class="caption">Group of Female Teachders</div>
+</div>
+
+    </div>
+</div>
+
+<!-- Lightbox Modal for Zoom Effect -->
+<div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="modal-caption"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

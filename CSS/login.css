@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f7f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-panel {
+    flex: 1;
+    background-color:rgba(128, 0, 0, 0.966);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.welcome-text {
+    text-align: center;
+}
+
+.welcome-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.new-applicant-btn {
+    background-color: rgba(128, 0, 0, 0.966);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-applicant-btn:hover {
+    background-color: rgba(128, 0, 0, 0.966);
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.right-panel h3 {
+    color: #007f00;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.login-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.login-box label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.login-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.remember-me label {
+    margin-left: 5px;
+}
+
+.login-btn {
+    background-color:rgba(128, 0, 0, 0.966);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #005a00;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007f00;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+.new-applicant-btn {
+    background-color: #006c00;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it look like a button */
+}
+
+.new-applicant-btn:hover {
+    background-color: #005a00;
+}

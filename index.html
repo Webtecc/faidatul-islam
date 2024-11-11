@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madarasatul Faidatul Islam</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    </head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <!--<img src="#" alt="IBBUL Logo"> <!-- Replace with actual logo URL -->
+            MADARASATUL FAIDATUL ISLAM 
+        </div>
+        <nav>
+            <a href="index.html">HOME PAGE</a>
+            <a href="about.html">ABOUT</a>
+            <a href="admin.html">ADMINISTRATION</a>
+            <a href="gallary.html">SCHOOL GALLARY</a>
+            <a href="application.html">APPLICATION PORTAL</a>
+        </nav>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <P>Our Next Qur'anic Walimah Is Scheduled On First Of Janaury Next Year (2025) 'In Shall Allah', All Graduants Are Expected To Complete Their There Payment Fee And Other Items Required Before On Or 25th Of December 2023.</P>    </div>
+
+    <!-- Hero Section -->
+<div class="hero" id="hero" style="background-image: url('Images/H2.jpg');">
+    <div class="hero-content">
+        <h1 id="hero-title">Our Focus Is On Students</h1>
+        <p id="hero-text">Our students will be among the most talented in our environments and the world.</p>
+    </div>
+    </div>
+     <!-- Left Arrow -->
+         <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+         <!-- Right Arrow -->
+         <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+     </div>
+ 
+     <script>
+        const hero = document.getElementById('hero');
+const heroTitle = document.getElementById('hero-title');
+const heroText = document.getElementById('hero-text');
+
+// Array of background images
+const images = [
+    'Images/H2.jpg',
+    'Images/H1.jpg',
+    'Images/teachers.jpg',
+    'Images/parade.jpg'
+];
+
+// Array of text content corresponding to each image
+const titles = [
+    'Our Focus Is On Students',
+    'Welcome to Our School Environment',
+    'Faida - A Hub of Knowledge',
+    'Learning For Practice'
+];
+
+const texts = [
+    'Our Priority is on grooming our students with standard knowledge and practices.',
+    'Our School provides a serene and conducive learning environment.',
+    'Equipped with standard and qualified teachers with resources to support academic excellence.',
+    'Our classrooms are equipped with the latest furniture for interactive and conducive learning environments.'
+];
+
+let index = 0;
+
+function changeSlide() {
+    // Update background image
+    hero.style.backgroundImage = `url(${images[index]})`;
+    // Update title and text
+    heroTitle.textContent = titles[index];
+    heroText.textContent = texts[index];
+}
+
+function nextSlide() {
+    index = (index + 1) % images.length;
+    changeSlide();
+}
+
+function prevSlide() {
+    index = (index - 1 + images.length) % images.length;
+    changeSlide();
+}
+
+// Automatically change slide every 5 seconds
+setInterval(nextSlide, 5000);
+</script>
+ 
+ 
+        <!-- About Our University Section -->
+<div class="about-section">
+    <!-- Left Column: About Writeup -->
+    <div class="about-right">
+        <p>Welcome to Madarasatul Faidatul Islam, Down Quarter's Branch Dutsen Kuran Gwari Minna, Niger State Nigeria. where "<strong>Imapacting Is Our Service</strong>" is our watchword.</p>
+        <p>Our school and teachers help to foster the intense interdisciplinary approach that shall inspire much of the anticipated outstanding learning achievement of the school and make our school a leader in so many fields of human endeavour, both locally and nationally.</p>
+        <button onclick="window.location.href='about.html'">Read More</button>
+    </div>
+    
+    <!-- Right Column: Image or Additional Content -->
+    <div class="about-left">
+        <h1>ABOUT OUR SCHOOL</h1>
+    </div>
+</div>
+ <!-- Footer Section -->
+ <footer>
+    <div class="footer-container">
+        <!-- Left Section: Contact Info -->
+        <div class="footer-section">
+            <h3>Madarasatul Faidatul Islam</h3>
+            <p><i class="fa fa-envelope"></i> info@faida.edu.ng</p>
+            <p><i class="fa fa-envelope"></i> registrar@faida.edu.ng</p>
+        </div>
+        
+        <!-- Center Section: Stakeholders -->
+        <div class="footer-section">
+            <h3>Stakeholders</h3>
+            <ul>
+                <li><a href="#">Faida Header Quarter</a></li>
+                <li><a href="#">Supporting Commitee</a></li>
+                <li><a href="#">Ministry of Education</a></li>
+            </ul>
+        </div>
+        
+        <!-- Right Section: Quick Links and Useful Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Admin.html">Administration</a></li>
+                <li><a href="gallary.html">School Gallary</a></li>
+            </ul>
+        </div>
+
+            <div class="footer-section">
+            <h3>Useful</h3>
+            <ul>
+                <li><a href="admin.html">Administration</a></li>
+                <li><a href="application.html">Application Portal</a></li>
+                <li><a href="index.html">Home Page</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Bottom Section: Social Media and Copyright -->
+    <div class="footer-bottom">
+        <div class="social-media">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+        <p>&copy; All rights reserved | Developed by <a href="#">JibrilTech.Dev</a></p>
+    </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+       </body>
+</html>

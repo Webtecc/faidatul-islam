@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAIDA-ADMIN Login Page</title>
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section with Logo and Title -->
+        <div class="left-section">
+           <!--img src="path-to-your-logo.jpg" alt="IBBU Logo" class="logo"-->
+            <h1>Madarasatul Faidatul Islam</h1>
+            <p>ADMINISTRATOR LOG IN PAGE</p>
+        </div>
+
+        <!-- Right Section with Login Form -->
+        <div class="right-section">
+            <a href="index.html" class="back-link">&larr; BACK TO HOMEPAGE</a>
+            <h2>ADMINISTRATOR PORTAL</h2>
+            <h3>WELCOME, PLEASE LOGIN</h3>
+
+            <!-- Login Form -->
+            <div class="login-form">
+                <form action="#" method="POST" onsubmit="return validateLogin(event)">
+                    <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input type="text" id="username" placeholder="Enter username" required>
+                    </div>
+                    
+                    <!-- Password field -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password" required>
+                    </div>
+                
+                    <!-- Submit button -->
+                    <button type="submit">Login</button>
+                
+                    <p class="forgot-password">
+                        Forgot your password? <a href="#">Get it Here</a>
+                    </p>
+                 </form>
+        
+                <!-- Loading message -->
+                <div id="loadingMessage" class="loading">Loading... Please wait</div>
+            </div>
+        </div>
+        
+        <script>
+            // Define hardcoded username and password
+            const validUsername = "admin";
+            const validPassword = "12345";
+        
+            // Function to validate login credentials
+            function validateLogin(event) {
+                event.preventDefault(); // Prevent form submission
+        
+                // Get the input values
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+        
+                // Check if the credentials match the hardcoded values
+                if (username === validUsername && password === validPassword) {
+                    // Show loading message and wait for 10 seconds before redirecting
+                    document.getElementById("loadingMessage").style.display = "block";
+        
+                    setTimeout(() => {
+                        // Redirect to the dashboard page
+                        window.location.href = "search.html";
+                    }, 10000); // 10 seconds delay
+                    return true;
+                } else {
+                    alert("Invalid username or password.");
+                    return false;
+                }
+            }
+        </script>
+        
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FAIDAH . All rights reserved</p>
+        <p>Developed by <a href="#">JibrilTech.Dev</a></p>
+    </footer>
+</body>
+</html>

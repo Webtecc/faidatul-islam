@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .welcome {
+            font-size: 20px;
+            color: #333;
+            text-align: left;
+        }
+        .info-section, .form-section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .info-item label {
+            font-weight: bold;
+            color: #333;
+        }
+        .form-section input, .form-section select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .form-section label {
+            color: #555;
+        }
+        .print-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .print-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Application Portal</h1>
+    </div>
+
+    <div id="welcomeSection" class="welcome">
+        <!-- Dynamic Welcome Message -->
+    </div>
+
+    <div class="info-section">
+        <h3>Basic Information</h3>
+        <div class="info-item">
+            <label>Application Number:</label>
+            <span id="appNumber">IBBUJMB/240253</span>
+        </div>
+        <div class="info-item">
+            <label>Admitted Level:</label>
+            <span id="admittedLevel">100</span>
+        </div>
+        <div class="info-item">
+            <label>Applied Department:</label>
+            <span id="department">Science</span>
+        </div>
+        <div class="info-item">
+            <label>Applied Programme:</label>
+            <span id="programme">Biology, Chemistry, Geography</span>
+        </div>
+        <div class="info-item">
+            <label>Gender:</label>
+            <span id="gender">Female</span>
+        </div>
+        <div class="info-item">
+            <label>State / LGA:</label>
+            <span id="stateLGA">Niger / Chanchaga</span>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Complete Your Registration</h3>
+        <label>First Name</label>
+        <input type="text" id="firstName" placeholder="Enter your first name">
+        
+        <label>Surname</label>
+        <input type="text" id="surname" placeholder="Enter your surname">
+        
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
+        
+        <label>Country</label>
+        <select id="country">
+            <option>Nigeria</option>
+            <option>Other</option>
+        </select>
+        
+        <label>State</label>
+        <select id="state">
+            <option>Niger</option>
+            <option>Other</option>
+        </select>
+        
+        <!-- Add more form fields as needed -->
+    </div>
+
+    <button class="print-btn" onclick="window.print()">Print Bio Data</button>
+</div>
+
+<script>
+    // Dummy data for demonstration purposes
+    const userData = {
+        name: "Zee Zee Umar",
+        applicationNumber: "IBBUJMB/240253",
+        admittedLevel: "100",
+        department: "Science",
+        programme: "Biology, Chemistry, Geography",
+        gender: "Female",
+        stateLGA: "Niger / Chanchaga"
+    };
+
+    // Save dummy data to local storage (this would be done on registration in a real app)
+    localStorage.setItem("applicantData", JSON.stringify(userData));
+
+    // Function to display welcome message and user details
+    function displayApplicantData() {
+        const data = JSON.parse(localStorage.getItem("applicantData"));
+        if (data) {
+            document.getElementById("welcomeSection").innerHTML = `Welcome, <strong>${data.name}</strong>!<br>Please complete the remaining registration steps below.`;
+            document.getElementById("appNumber").innerText = data.applicationNumber;
+            document.getElementById("admittedLevel").innerText = data.admittedLevel;
+            document.getElementById("department").innerText = data.department;
+            document.getElementById("programme").innerText = data.programme;
+            document.getElementById("gender").innerText = data.gender;
+            document.getElementById("stateLGA").innerText = data.stateLGA;
+        }
+    }
+
+    // Call the function to display data
+    displayApplicantData();
+</script>
+
+</body>
+</html>
