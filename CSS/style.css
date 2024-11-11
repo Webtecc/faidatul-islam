@@ -81,66 +81,26 @@ body {
     }
 }
 
+/* Hero Section Styling */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 500px;
+    background-image: url('H1.JPG'); /* Replace with your preferred background image */
     background-size: cover;
     background-position: center;
+    height: 500px; /* Adjust height as needed */
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #fff;
+    justify-content: center;
+    color: white;
     text-align: center;
-    transition: background-image 5s ease-in-out;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.hero-content {
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 36px;
+.hero-content h1 {
+    font-size: 2.5em;
     margin-bottom: 10px;
 }
 
-.hero p {
-    font-size: 20px;
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: black;
-    background-color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.arrow-left {
-    left: 15px;
-}
-
-.arrow-right {
-    right: 15px;
-}
-
-.arrow:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+.hero-content p {
+    font-size: 1.2em;
 }
 
 /* Container for the two columns with background image and transparency */
